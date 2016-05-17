@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'myfirst',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -75,9 +77,18 @@ WSGI_APPLICATION = 'weitest.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',  # 设置为mysql数据库
+        'NAME': 'weitest',  # mysql数据库名
+        'USER': 'root',  # mysql用户名，留空则默认为当前linux用户名
+        'PASSWORD': 'root',  # mysql密码
+        'HOST': '',  # 留空默认为localhost
+        'PORT': '3306',  # 留空默认为3306端口
     }
 }
 

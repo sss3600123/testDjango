@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from myfirst import views as myfirstview
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^hello/', myfirstview.hello, name="hello"),
 ]
